@@ -130,7 +130,7 @@ declare module 'astro:content' {
 		"posts": {
 "another-brand-new-post.md": {
 	id: "another-brand-new-post.md";
-  slug: "another-new-post";
+  slug: "another-brand-new-post";
   body: string;
   collection: "posts";
   data: any
