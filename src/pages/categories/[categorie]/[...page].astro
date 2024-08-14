@@ -8,27 +8,27 @@ import { getCategories } from "@lib/categoriesParser.astro";
 import { sortByDate } from "@lib/utils/sortFunctions";
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const allCategories = await getCategories("posts");
-  let allPosts = await getContent("posts");
+	const allCategories = await getCategories("posts");
+	let allPosts = await getContent("posts");
 
-  allPosts = sortByDate(allPosts);
+	allPosts = sortByDate(allPosts);
 
-  return Array.from(allCategories).flatMap((categorie) => {
-    const filteredPosts = allPosts.filter(
-      (post: any) =>
-        post.data.categories && post.data.categories.includes(categorie)
-    );
-    return paginate(filteredPosts, {
-      params: { categorie },
-      pageSize: config.settings.pagination,
-    });
-  });
-})  satisfies GetStaticPaths;
+	return Array.from(allCategories).flatMap((categorie) => {
+		const filteredPosts = allPosts.filter(
+			(post: any) =>
+				post.data.categories && post.data.categories.includes(categorie),
+		);
+		return paginate(filteredPosts, {
+			params: { categorie },
+			pageSize: config.settings.pagination,
+		});
+	});
+}) satisfies GetStaticPaths;
 
 const { page } = Astro.props;
 const { categorie } = Astro.params;
 ---
 
 <Layout title={categorie}>
-  <List title={categorie} page={page} url="/posts/" />
+	<List title={categorie} page={page} url="/posts/" />
 </Layout>

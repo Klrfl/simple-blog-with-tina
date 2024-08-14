@@ -1,19 +1,21 @@
 ---
-import config from '@config/config.json';
-import Layout from '@layouts/index.astro';
-const title = 'Page not found';
+import config from "@config/config.json";
+import Layout from "@layouts/index.astro";
+const title = "Page not found";
 ---
 
 <Layout title={title}>
-  <div class="d-flex flex-column justify-content-center bg-skew bg-skew-light overflow-hidden">
-    <div class="container">
-      <div class="row justify-content-lg-center text-center">
-        <div class="col-lg-8">
-            <h1 class="display-4 mb-5 mt-5">{title}</h1>
-            <p class="lead mb-5">The page you are looking for does not exist.</p>
-            <a href="/" class="btn btn-primary rounded-pill">Go to home page</a>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div
+		class="d-flex flex-column justify-content-center bg-skew bg-skew-light overflow-hidden"
+	>
+		<div class="container">
+			<div class="row justify-content-lg-center text-center">
+				<div class="col-lg-8">
+					<h1 class="display-4 mb-5 mt-5">{title}</h1>
+					<p class="lead mb-5">The page you are looking for does not exist.</p>
+					<a href="/" class="btn btn-primary rounded-pill">Go to home page</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </Layout>

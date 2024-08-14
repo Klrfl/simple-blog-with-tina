@@ -6,13 +6,13 @@ import List from "@components/List.astro";
 import { getContent } from "@lib/contentParser.astro";
 import { sortByDate } from "@lib/utils/sortFunctions";
 
-export  const getStaticPaths = (async({paginate}) => {
-  let allPosts = await getContent("posts");
-  allPosts = sortByDate(allPosts);
+export const getStaticPaths = (async ({ paginate }) => {
+	let allPosts = await getContent("posts");
+	allPosts = sortByDate(allPosts);
 
-  return paginate(allPosts, {
-    pageSize: config.settings.pagination,
-  });
+	return paginate(allPosts, {
+		pageSize: config.settings.pagination,
+	});
 }) satisfies GetStaticPaths;
 
 const title = config.site.title;
@@ -20,5 +20,5 @@ const { page } = Astro.props;
 ---
 
 <Layout title={title}>
-  <List title={title} page={page} url="posts/" />
+	<List title={title} page={page} url="posts/" />
 </Layout>

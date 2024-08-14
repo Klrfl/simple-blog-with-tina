@@ -8,20 +8,20 @@ import { getTags } from "@lib/tagsParser.astro";
 import { sortByDate } from "@lib/utils/sortFunctions";
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const allTags = await getTags("posts");
-  let allPosts = await getContent("posts");
+	const allTags = await getTags("posts");
+	let allPosts = await getContent("posts");
 
-  allPosts = sortByDate(allPosts);
+	allPosts = sortByDate(allPosts);
 
-  return Array.from(allTags).flatMap((tag) => {
-    const filteredPosts = allPosts.filter(
-      (post: any) => post.data.tags && post.data.tags.includes(tag)
-    );
-    return paginate(filteredPosts, {
-      params: { tag },
-      pageSize: config.settings.pagination,
-    });
-  });
+	return Array.from(allTags).flatMap((tag) => {
+		const filteredPosts = allPosts.filter(
+			(post: any) => post.data.tags && post.data.tags.includes(tag),
+		);
+		return paginate(filteredPosts, {
+			params: { tag },
+			pageSize: config.settings.pagination,
+		});
+	});
 }) satisfies GetStaticPaths;
 
 const { page } = Astro.props;
@@ -29,5 +29,5 @@ const { tag } = Astro.params;
 ---
 
 <Layout title={tag}>
-  <List title={tag} page={page} url="/posts/" />
+	<List title={tag} page={page} url="/posts/" />
 </Layout>

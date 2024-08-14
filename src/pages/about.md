@@ -44,23 +44,23 @@ Feel free to check [our documentation](https://github.com/withastro/astro) or ju
 
 ```json
 {
-  "site": {
-    "language": "en",
-    "title": "Astro Themes",
-    "description": "<your site description>",
-    "copyright": "© 2024 copyright text."
-  },
-  "memus": [
-    {
-      "identifier": "about",
-      "name": "About",
-      "url": "/about/"
-    }
-  ],
-  "settings": {
-    "pagination": 6,
-    "blog_folder": "posts"
-  }
+	"site": {
+		"language": "en",
+		"title": "Astro Themes",
+		"description": "<your site description>",
+		"copyright": "© 2024 copyright text."
+	},
+	"memus": [
+		{
+			"identifier": "about",
+			"name": "About",
+			"url": "/about/"
+		}
+	],
+	"settings": {
+		"pagination": 6,
+		"blog_folder": "posts"
+	}
 }
 ```
 

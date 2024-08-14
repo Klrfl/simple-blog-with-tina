@@ -8,50 +8,47 @@ const { title, date, categories, tags } = frontmatter;
 ---
 
 <Layout title={title}>
-  <div class="container">
-    <div class="row justify-content-center text-center my-5">
-      <div class="col-lg-10">
-        {
-          categories &&
-            categories.map((categorie: any) => (
-              <a
-                href={`categories/${categorie}/`}
-                class="d-inline-block link-cta mb-4 text-uppercase"
-              >
-                {categorie}
-              </a>
-            ))
-        }
-        <h1 class="mb-4 text-center">{title}</h1>
-        <p class="small mb-5 text-center">
-          <span class="text-uppercase">{dateFormat(date)}</span>
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="bg-skew bg-skew-light">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <article class="pb-2">
-            <slot />
-            <p class="mt-5 text-center">
-              {tags && <span class="text-secondary">Tagged: </span>}
-              {
-                tags &&
-                  tags.map((tag: any) => (
-                    <a
-                      href={`tag/${tag}/`}
-                      class="link-tag text-dark"
-                    >
-                      #{tag}
-                    </a>
-                  ))
-              }
-            </p>
-          </article>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div class="container">
+		<div class="row justify-content-center text-center my-5">
+			<div class="col-lg-10">
+				{
+					categories &&
+						categories.map((categorie: any) => (
+							<a
+								href={`categories/${categorie}/`}
+								class="d-inline-block link-cta mb-4 text-uppercase"
+							>
+								{categorie}
+							</a>
+						))
+				}
+				<h1 class="mb-4 text-center">{title}</h1>
+				<p class="small mb-5 text-center">
+					<span class="text-uppercase">{dateFormat(date)}</span>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="bg-skew bg-skew-light">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<article class="pb-2">
+						<slot />
+						<p class="mt-5 text-center">
+							{tags && <span class="text-secondary">Tagged: </span>}
+							{
+								tags &&
+									tags.map((tag: any) => (
+										<a href={`tag/${tag}/`} class="link-tag text-dark">
+											#{tag}
+										</a>
+									))
+							}
+						</p>
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
 </Layout>
