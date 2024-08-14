@@ -1,10 +1,11 @@
 ---
+import type { Page } from "astro";
 import Card from "./Card.astro";
 import Pagination from "./Pagination.astro";
 
 export interface Props {
   title: string;
-  page: Object;
+  page: Page<unknown>;
   url?: string;
 }
 
@@ -23,6 +24,6 @@ const { title, page, url } = Astro.props;
     <div class="row" transition:name="list" transition:animate="slide">
       {page?.data.map((post) => <Card post={post} url={url} />)}
     </div>
-    <Pagination page={page} url={url} />
+    <Pagination page={page} />
   </div>
 </div>

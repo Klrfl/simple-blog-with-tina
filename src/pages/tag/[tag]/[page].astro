@@ -7,8 +7,8 @@ import { getTags } from "@lib/tagsParser.astro";
 import { sortByDate } from "@lib/utils/sortFunctions";
 
 export async function getStaticPaths({ paginate }) {
-  const allTags = await getTags(config.settings.blog_folder);
-  let allPosts = await getContent(config.settings.blog_folder);
+  const allTags = await getTags("posts");
+  let allPosts = await getContent("posts");
 
   allPosts = sortByDate(allPosts);
 
