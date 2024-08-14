@@ -31,7 +31,7 @@ export default function PostLayout({ tinaProps }: Props) {
                 <a
                   href={`/categories/${categorie}/`}
                   className="d-inline-block link-cta mb-4 text-uppercase"
-                >
+                  key={categorie}>
                   {categorie}
                 </a>
               ))}
@@ -56,7 +56,10 @@ export default function PostLayout({ tinaProps }: Props) {
                   )}
                   {post.tags &&
                     post.tags.map((tag) => (
-                      <a href={`/tag/${tag}/`} className="link-tag text-dark">
+                      <a
+                        href={`/tag/${tag}/`}
+                        className="link-tag text-dark"
+                        key={tag}>
                         #{tag}
                       </a>
                     ))}
