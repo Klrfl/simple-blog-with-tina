@@ -55,7 +55,6 @@ Feel free to check [our documentation](https://github.com/withastro/astro) or ju
 ```json
 {
   "site": {
-    "baseUrl": "/",
     "language": "en",
     "title": "Astro Themes",
     "description": "<your site description>",

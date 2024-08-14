@@ -17,7 +17,7 @@ const { post, url } = Astro.props;
         post.data.categories &&
           post.data.categories.map((categorie: any) => (
             <a
-              href={`${config.site.baseUrl}${url}`}
+              href={`/${url}`}
               class="d-inline-block link-cta mb-4 text-uppercase"
             >
               {categorie}
@@ -27,7 +27,7 @@ const { post, url } = Astro.props;
       <h2 class="card-title mb-4">
         <a
           class="stretched-link"
-          href={`${config.site.baseUrl}${url}${post.data.slug}`}
+          href={`${url}${post.data.slug}`}
           >{post.data.title}</a
         >
       </h2>
@@ -40,7 +40,7 @@ const { post, url } = Astro.props;
           post.data.tags &&
             post.data.tags.map((tag: any) => (
               <a
-                href={`${config.site.baseUrl}tag/${tag}/`}
+                href={`/tag/${tag}/`}
                 class="link-tag text-dark"
               >
                 #{tag}

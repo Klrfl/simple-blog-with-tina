@@ -13,7 +13,7 @@ const pagination = Math.ceil(page.total/page.size);
     <ul class="pagination justify-content-center">
       {Array(pagination).fill(0).map( (_,i) => (
         <li class={`page-item ${page.currentPage === i+1 ?'active':''}`}>
-          <a class="page-link" href={`${config.site.baseUrl}${typeof(url)==='undefined'?'':url}${ i === 0 ?'' : i+1}`}>{i+1}</a>
+          <a class="page-link" href={`${typeof(url)==='undefined'?'':url}${ i === 0 ?'' : i+1}`}>{i+1}</a>
         </li>
       ))}
     </ul>

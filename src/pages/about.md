@@ -30,7 +30,7 @@ This theme is built upon a theme called [simple-blog](https://github.com/10mohi6
 All commands are run from the root of the project, from a terminal:
 
 | Command           | Action                                       |
-|:----------------  |:-------------------------------------------- |
+| :---------------- | :------------------------------------------- |
 | `npm install`     | Installs dependencies                        |
 | `npm run dev`     | Starts local dev server at `localhost:3000`  |
 | `npm run build`   | Build your production site to `./dist/`      |
@@ -45,13 +45,12 @@ Feel free to check [our documentation](https://github.com/withastro/astro) or ju
 ```json
 {
   "site": {
-    "baseUrl": "/",
     "language": "en",
     "title": "Astro Themes",
     "description": "<your site description>",
     "copyright": "© 2024 copyright text."
   },
-  "memus":[
+  "memus": [
     {
       "identifier": "about",
       "name": "About",

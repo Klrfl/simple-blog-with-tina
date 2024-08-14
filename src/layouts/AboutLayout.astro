@@ -15,7 +15,7 @@ const { title, date, categories, tags } = frontmatter;
           categories &&
             categories.map((categorie: any) => (
               <a
-                href={`${config.site.baseUrl}categories/${categorie}/`}
+                href={`categories/${categorie}/`}
                 class="d-inline-block link-cta mb-4 text-uppercase"
               >
                 {categorie}
@@ -41,7 +41,7 @@ const { title, date, categories, tags } = frontmatter;
                 tags &&
                   tags.map((tag: any) => (
                     <a
-                      href={`${config.site.baseUrl}tag/${tag}/`}
+                      href={`tag/${tag}/`}
                       class="link-tag text-dark"
                     >
                       #{tag}
