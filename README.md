@@ -2,14 +2,13 @@
 
 # Astro Simple blog theme
 
-simple blog is a simple blog theme for [Astro](https://docs.astro.build).
+This Astro + Tina starter is based on the [simple blog theme for Astro](https://github.com/dofbi/astro-simple-blog-theme).
 
 ![screenshot](https://raw.githubusercontent.com/10mohi6/hugo-theme-simple-blog/master/images/screenshot.png)
 
 ## Demo
 
 [View Creek on Netlify](https://astro-simple-blog.netlify.app/)
-
 [Live editing on Tina](/public/assets/simple-blog-with-tina-demo.mp4)
 
 ## Credits
@@ -28,6 +27,8 @@ If this template helped you, buy @dofbi a coffee!
 - pagination
 - tags
 - categories
+- content management with Tina CMS
+- live editing
 
 ## 🧞 Commands
 
@@ -46,10 +47,6 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm run build`   | Build your production site to `./dist/`      |
 | `pnpm run preview` | Preview your build locally, before deploying |
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://github.com/withastro/astro) or jump into our [Discord server](https://astro.build/chat).
-
 ## Site Configuration
 
 ```json
@@ -60,7 +57,7 @@ Feel free to check [our documentation](https://github.com/withastro/astro) or ju
     "description": "<your site description>",
     "copyright": "© 2024 copyright text."
   },
-  "memus": [
+  "links": [
     {
       "identifier": "about",
       "name": "About",
@@ -69,12 +66,9 @@ Feel free to check [our documentation](https://github.com/withastro/astro) or ju
   ],
   "settings": {
     "pagination": 6,
-    "blog_folder": "posts"
   }
 }
 ```
-
-## Support
 
 ## License
 
