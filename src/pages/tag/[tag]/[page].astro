@@ -15,7 +15,7 @@ export const getStaticPaths = (async ({ paginate }) => {
 
 	return Array.from(allTags).flatMap((tag) => {
 		const filteredPosts = allPosts.filter(
-			(post: any) => post.data.tags && post.data.tags.includes(tag),
+			(post: any) => post.data.tags && post.data.tags.includes(tag)
 		);
 		return paginate(filteredPosts, {
 			params: { tag },

@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 	const postsPages = await Promise.all(
 		postsFromTina.map(async ({ params }) => {
 			return await client.queries.post({ relativePath: params.relativePath });
-		}),
+		})
 	);
 
 	return postsPages.map((post) => {
