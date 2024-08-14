@@ -1,4 +1,5 @@
 ---
+import type { GetStaticPaths } from "astro";
 import config from "@config/config.json";
 import Layout from "@layouts/index.astro";
 import List from "@components/List.astro";
@@ -6,7 +7,7 @@ import { getContent } from "@lib/contentParser.astro";
 import { getTags } from "@lib/tagsParser.astro";
 import { sortByDate } from "@lib/utils/sortFunctions";
 
-export async function getStaticPaths({ paginate }) {
+export const getStaticPaths = (async ({ paginate }) {
   const allTags = await getTags("posts");
   let allPosts = await getContent("posts");
 
@@ -21,7 +22,7 @@ export async function getStaticPaths({ paginate }) {
       pageSize: config.settings.pagination,
     });
   });
-}
+}) satisfies GetStaticPaths;
 
 const { page } = Astro.props;
 const { tag } = Astro.params;
