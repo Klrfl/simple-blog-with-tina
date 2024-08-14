@@ -1,9 +1,11 @@
+import type { CollectionEntry, CollectionKey } from "astro:content";
+
 // sort by date
-export const sortByDate = (array: any[]) => {
+export const sortByDate = (array: CollectionEntry<CollectionKey>[]) => {
 	const sortedArray = array.sort(
-		(a: any, b: any) =>
-			new Date(b.data.date && b.data.date) -
-			new Date(a.data.date && a.data.date)
+		(a, b) =>
+			new Date(b.data.date && b.data.date).getTime() -
+			new Date(a.data.date && a.data.date).getTime()
 	);
 	return sortedArray;
 };

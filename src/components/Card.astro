@@ -1,8 +1,10 @@
 ---
 import { dateFormat } from "@lib/utils/dateFormat";
+import type { CollectionKey } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 
 export interface Props {
-	post: any;
+	post: CollectionEntry<CollectionKey>;
 	url?: string;
 }
 
@@ -14,7 +16,7 @@ const { post, url } = Astro.props;
 		<div class="card-body pt-5 px-5 pb-4 text-center">
 			{
 				post.data.categories &&
-					post.data.categories.map((categorie: any) => (
+					post.data.categories.map((categorie: string) => (
 						<a
 							href={`/${url}`}
 							class="d-inline-block link-cta mb-4 text-uppercase"
@@ -35,7 +37,7 @@ const { post, url } = Astro.props;
 			<p>
 				{
 					post.data.tags &&
-						post.data.tags.map((tag: any) => (
+						post.data.tags.map((tag: string) => (
 							<a href={`/tag/${tag}/`} class="link-tag text-dark">
 								#{tag}
 							</a>
