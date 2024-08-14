@@ -6,5 +6,7 @@ import tina from "astro-tina";
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), tina()],
+  redirects: {
+    "/tag/[tag]": "/tag/[tag]/1",
+  },
 });
-
