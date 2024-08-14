@@ -7,12 +7,15 @@
     "dev": "npx tinacms dev -c \"astro dev\"",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "format": "prettier --write src/"
   },
   "devDependencies": {
     "@tinacms/cli": "^1.5.53",
     "@types/node": "^22.2.0",
-    "astro": "^4.13.3"
+    "astro": "^4.13.3",
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1"
   },
   "dependencies": {
     "@astrojs/react": "^3.6.2",

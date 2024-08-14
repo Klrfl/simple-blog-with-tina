@@ -1,26 +1,25 @@
 {
-  "memus": [
-    {
-      "identifier": "about",
-      "name": "About",
-      "url": "/about/"
-    }
-  ],
-  "site": {
-    "title": "Astro Simple",
-    "description": "<your site description>",
-    "copyright": "© 2024 copyright text.",
-    "language": "en"
-  },
-  "links": [
-    {
-      "identifier": "about",
-      "name": "About",
-      "url": "/about"
-    }
-  ],
-  "settings": {
-    "pagination": 6
-  }
+	"memus": [
+		{
+			"identifier": "about",
+			"name": "About",
+			"url": "/about/"
+		}
+	],
+	"site": {
+		"title": "Astro Simple",
+		"description": "<your site description>",
+		"copyright": "© 2024 copyright text.",
+		"language": "en"
+	},
+	"links": [
+		{
+			"identifier": "about",
+			"name": "About",
+			"url": "/about"
+		}
+	],
+	"settings": {
+		"pagination": 6
+	}
 }
-
