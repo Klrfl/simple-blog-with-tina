@@ -1,9 +1,5 @@
 ---
-title: "About"
-date: 2024-04-06T06:51:00Z
-slug: "about"
-description: "simple blog is a simple blog theme for Astro. It is a fork of the simple blog theme for Hugo."
-layout: "../layouts/AboutLayout.astro"
+title: About
 ---
 
 # Astro Simple blog theme
@@ -20,10 +16,10 @@ This theme is built upon a theme called [simple-blog](https://github.com/10mohi6
 
 ## Features
 
-- content
-- pagination
-- tags
-- categories
+* content
+* pagination
+* tags
+* categories
 
 ## 🧞 Commands
 
