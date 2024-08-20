@@ -1,4 +1,4 @@
-import { dateFormat } from "@lib/utils/dateFormat";
+import { dateFormat } from "@/lib/utils/dateFormat";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { PostQuery, PostQueryVariables } from "tina/__generated__/types";
 import { useTina } from "tinacms/dist/react";

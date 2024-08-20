@@ -1,11 +1,11 @@
 ---
 import type { GetStaticPaths } from "astro";
-import config from "@config/config.json";
-import Layout from "@layouts/index.astro";
-import List from "@components/List.astro";
-import { getContent } from "@lib/contentParser.astro";
-import { getCategories } from "@lib/categoriesParser.astro";
-import { sortByDate } from "@lib/utils/sortFunctions";
+import config from "@/config/config.json";
+import Layout from "@/layouts/index.astro";
+import List from "@/components/List.astro";
+import { getContent } from "@/lib/contentParser.astro";
+import { getCategories } from "@/lib/categoriesParser.astro";
+import { sortByDate } from "@/lib/utils/sortFunctions";
 
 export const getStaticPaths = (async ({ paginate }) => {
 	const allCategories = await getCategories("posts");

@@ -1,11 +1,11 @@
 ---
 import type { GetStaticPaths } from "astro";
-import config from "@config/config.json";
-import Layout from "@layouts/index.astro";
-import List from "@components/List.astro";
+import config from "@/config/config.json";
+import Layout from "@/layouts/index.astro";
+import List from "@/components/List.astro";
 import { langs } from "src/i18n";
-import { getContent } from "@lib/contentParser.astro";
-import { sortByDate } from "@lib/utils/sortFunctions";
+import { getContent } from "@/lib/contentParser.astro";
+import { sortByDate } from "@/lib/utils/sortFunctions";
 
 export const getStaticPaths = (async ({ paginate }) => {
 	const allPosts = await getContent("posts");
