@@ -22,7 +22,10 @@ export async function getStaticPaths() {
 
 	return postsPages.map((post) => {
 		return {
-			params: { slug: post.data.post._sys.filename },
+      params: {
+        lang: "en",
+        slug: post.data.post._sys.filename 
+      },
 			props: { tinaProps: { ...post } },
 		};
 	});

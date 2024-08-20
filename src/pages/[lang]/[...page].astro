@@ -10,10 +10,11 @@ export const getStaticPaths = (async ({ paginate }) => {
 	const allPosts = await getContent("posts");
   const normalizedPosts = sortByDate(allPosts).map(post => ({
     ...post,
-    slug: post.slug.split("/")[1]
+    slug: post.slug.split("/")[1],
   }));
 
 	return paginate(normalizedPosts, {
+    params: {lang: "en"},
 		pageSize: config.settings.pagination,
 	});
 }) satisfies GetStaticPaths;
