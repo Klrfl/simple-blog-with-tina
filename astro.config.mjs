@@ -9,4 +9,8 @@ export default defineConfig({
   redirects: {
     "/tag/[tag]": "/tag/[tag]/1",
   },
+  i18n: {
+    defaultLocale: "id",
+    locales: ["id", "en"]
+  }
 });
