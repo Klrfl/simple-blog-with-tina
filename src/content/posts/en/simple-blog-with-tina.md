@@ -2,7 +2,7 @@
 title: Simple blog with Tina
 slug: simple-blog-with-tina
 description: Does this thing even work?
-date: 2024-08-13T14:23:29.064Z
+date: '2024-08-13T14:23:29.064Z'
 tags:
   - headless cms
   - git
