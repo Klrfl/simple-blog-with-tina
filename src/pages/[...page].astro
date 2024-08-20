@@ -7,10 +7,13 @@ import { getContent } from "@lib/contentParser.astro";
 import { sortByDate } from "@lib/utils/sortFunctions";
 
 export const getStaticPaths = (async ({ paginate }) => {
-	let allPosts = await getContent("posts");
-	allPosts = sortByDate(allPosts);
+	const allPosts = await getContent("posts");
+  const normalizedPosts = sortByDate(allPosts).map(post => ({
+    ...post,
+    slug: post.slug.split("/")[1]
+  }));
 
-	return paginate(allPosts, {
+	return paginate(normalizedPosts, {
 		pageSize: config.settings.pagination,
 	});
 }) satisfies GetStaticPaths;
