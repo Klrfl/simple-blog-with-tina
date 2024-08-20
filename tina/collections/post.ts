@@ -1,3 +1,4 @@
+import { slugify } from "@/utils/utils";
 import type { Collection } from "tinacms";
 
 
@@ -59,6 +60,6 @@ const postCollection: Collection = {
             isBody: true,
           },
         ],
-      }
+}
 
 export default postCollection

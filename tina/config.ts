@@ -1,6 +1,7 @@
 import { defineConfig } from "tinacms";
 import postCollection from "./collections/post";
 import configCollection from "./collections/config";
+import pageCollection from "./collections/page";
 
 // Your hosting provider likely exposes this as an environment variable
 // const branch = import.meta.env.GITHUB_BRANCH || import.meta.env.HEAD || "main";
@@ -41,6 +42,7 @@ export default defineConfig({
     collections: [
       postCollection,
       configCollection,
+      pageCollection,
     ],
   },
 });
