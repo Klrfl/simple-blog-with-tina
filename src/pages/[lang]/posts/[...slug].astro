@@ -1,7 +1,7 @@
 ---
 import Layout from "@layouts/index.astro";
 import PostLayout from "@layouts/PostLayout.tsx";
-
+import {langs} from "../../../i18n/"
 import client from "tina/__generated__/client";
 
 export async function getStaticPaths() {
@@ -20,15 +20,21 @@ export async function getStaticPaths() {
 		})
 	);
 
-	return postsPages.map((post) => {
+  return langs.flatMap(lang => {
+    return postsPages
+      .filter(post => {
+        const [postLang] = post.data.post._sys.breadcrumbs
+        return postLang === lang
+      })
+      .map((post) => {
+    const [, slug] = post.data.post._sys.breadcrumbs
+    
 		return {
-      params: {
-        lang: "en",
-        slug: post.data.post._sys.filename 
-      },
+        params: { lang, slug },
 			props: { tinaProps: { ...post } },
 		};
 	});
+  })
 }
 
 const { tinaProps } = Astro.props;
