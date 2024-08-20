@@ -1,6 +1,5 @@
 ---
 title: i18n with Tina?
-slug: i18n-with-tina
 description: Trying out some methods to implement i18n with Tina
 date: 2024-08-20T02:33:41.457Z
 categories:

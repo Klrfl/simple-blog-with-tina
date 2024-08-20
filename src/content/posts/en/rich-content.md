@@ -1,7 +1,6 @@
 ---
 title: Rich Content
 date: '2022-04-30T07:51:00.000Z'
-slug: rich-content
 description: >-
   Astro theme supports rich content files, which can be used to embed videos,
   images, and other media files.

@@ -1,7 +1,6 @@
 ---
 title: Placeholder Text
 date: '2022-05-01T07:51:00.000Z'
-slug: placeholder-text
 description: >-
   This article offers a sample basic Markdown syntax that can be used in Astro
   content files, also it shows whether basic HTML elements are decorated with
