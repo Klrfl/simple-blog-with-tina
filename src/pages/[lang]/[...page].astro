@@ -10,22 +10,22 @@ import { sortByDate } from "@lib/utils/sortFunctions";
 export const getStaticPaths = (async ({ paginate }) => {
 	const allPosts = await getContent("posts");
 
-  return langs.flatMap(lang => {
-    const normalizedPosts = sortByDate(allPosts)
-    .filter(post => {
-      const [postLang] = post.slug.split("/")
-      return postLang === lang
-    })
-    .map(post => {
-      const [, slug] = post.slug.split("/")
-      return { ...post, slug }
-    });
+	return langs.flatMap((lang) => {
+		const normalizedPosts = sortByDate(allPosts)
+			.filter((post) => {
+				const [postLang] = post.slug.split("/");
+				return postLang === lang;
+			})
+			.map((post) => {
+				const [, slug] = post.slug.split("/");
+				return { ...post, slug };
+			});
 
-    return paginate(normalizedPosts, {
-      params: { lang },
-  		pageSize: config.settings.pagination,
-  	});
-  })
+		return paginate(normalizedPosts, {
+			params: { lang },
+			pageSize: config.settings.pagination,
+		});
+	});
 }) satisfies GetStaticPaths;
 
 const title = config.site.title;

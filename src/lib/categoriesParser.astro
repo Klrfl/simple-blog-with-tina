@@ -6,7 +6,12 @@ export const getCategories = async (collection: CollectionKey) => {
 	const allPosts = await getContent(collection);
 
 	const categories = allPosts.map((post) => {
-		return post.data.categories && post.data.categories.map((categorie: string) => categories.push(categorie.toLowerCase()));
+		return (
+			post.data.categories &&
+			post.data.categories.map((categorie: string) =>
+				categories.push(categorie.toLowerCase())
+			)
+		);
 	});
 
 	const allCategories = [...new Set(categories)];

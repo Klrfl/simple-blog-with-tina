@@ -5,14 +5,15 @@ import { getContent } from "./contentParser.astro";
 export const getTags = async (collection: CollectionKey) => {
 	const allPosts = await getContent(collection);
 
-  const tags = allPosts.map((post) => {
-    const {tags} = post.data;
-    if (!tags) return;
+	const tags = allPosts
+		.map((post) => {
+			const { tags } = post.data;
+			if (!tags) return;
 
-		return tags.map((tag: string) => tag.toLowerCase());
-  })
-  .filter(tag => tag !== undefined)
-  .flat();
+			return tags.map((tag: string) => tag.toLowerCase());
+		})
+		.filter((tag) => tag !== undefined)
+		.flat();
 
 	return [...new Set(tags)];
 };
