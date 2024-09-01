@@ -1,3 +1,6 @@
+# we're using content collections
+.astro
+
 # build output
 dist/
 .output/
