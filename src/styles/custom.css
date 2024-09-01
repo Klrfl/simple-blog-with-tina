@@ -1,3 +1,7 @@
+img {
+	max-width: 100%;
+}
+
 .my-lg-6 {
 	margin-top: 5rem !important;
 	margin-bottom: 5rem !important;
