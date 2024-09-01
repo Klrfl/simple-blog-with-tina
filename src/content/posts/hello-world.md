@@ -1,7 +1,7 @@
 ---
 slug: hello-world
-title: 'Hello, World!'
-description: 'Hello world, from Tina!'
+title: "Hello, World!"
+description: "Hello world, from Tina!"
 date: 2024-08-12T17:00:00.000Z
 categories:
   - tina

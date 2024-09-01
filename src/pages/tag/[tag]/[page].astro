@@ -4,30 +4,30 @@ import config from "@config/config.json";
 import Layout from "@layouts/index.astro";
 import List from "@components/List.astro";
 import { getContent } from "@lib/contentParser.astro";
-import { getCategories } from "@lib/categoriesParser.astro";
+import { getTags } from "@lib/tagsParser.astro";
 import { sortByDate } from "@lib/utils/sortFunctions";
 
 export const getStaticPaths = (async ({ paginate }) => {
-	const allCategories = await getCategories("posts");
+	const allTags = await getTags("posts");
 	let allPosts = await getContent("posts");
 
 	allPosts = sortByDate(allPosts);
 
-	return Array.from(allCategories).flatMap((categorie) => {
+	return Array.from(allTags).flatMap((tag) => {
 		const filteredPosts = allPosts.filter(
-			(post) => post.data.categories && post.data.categories.includes(categorie)
+			(post) => post.data.tags && post.data.tags.includes(tag)
 		);
 		return paginate(filteredPosts, {
-			params: { categorie },
+			params: { tag },
 			pageSize: config.settings.pagination,
 		});
 	});
 }) satisfies GetStaticPaths;
 
 const { page } = Astro.props;
-const { categorie } = Astro.params;
+const { tag } = Astro.params;
 ---
 
-<Layout title={categorie}>
-	<List title={categorie} page={page} url="/posts/" />
+<Layout title={tag}>
+	<List title={tag} page={page} url="/posts/" />
 </Layout>

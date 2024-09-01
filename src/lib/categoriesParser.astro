@@ -1,18 +1,15 @@
 ---
+import type { CollectionKey } from "astro:content";
 import { getContent } from "./contentParser.astro";
 
-export const getCategories = async (collection: string) => {
-  const allPosts = await getContent(collection);
+export const getCategories = async (collection: CollectionKey) => {
+	const allPosts = await getContent(collection);
 
-  let categories: any[] = [];
-  allPosts.map((post: any) => {
-    post.data.categories &&
-      post.data.categories.map((categorie: any) =>
-        categories.push(categorie.toLowerCase())
-      );
-  });
+	const categories = allPosts.map((post) => {
+		return post.data.categories && post.data.categories.map((categorie: string) => categories.push(categorie.toLowerCase()));
+	});
 
-  const allCategories = [...new Set(categories)];
-  return allCategories;
+	const allCategories = [...new Set(categories)];
+	return allCategories;
 };
 ---

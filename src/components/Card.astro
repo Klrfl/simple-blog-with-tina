@@ -1,10 +1,11 @@
 ---
-import config from "@config/config.json";
 import { dateFormat } from "@lib/utils/dateFormat";
+import type { CollectionKey } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 
 export interface Props {
-  post: any;
-  url?: string;
+	post: CollectionEntry<CollectionKey>;
+	url?: string;
 }
 
 const { post, url } = Astro.props;

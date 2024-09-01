@@ -2,14 +2,16 @@
 
 # Astro Simple blog theme + Tina CMS
 
-This is the simple blogsimple blog theme for [Astro](https://docs.astro.build)
-extended with Tina CMS.
+This Astro + Tina starter is based on the [simple blog theme for Astro](https://github.com/dofbi/astro-simple-blog-theme).
 
 ![screenshot](https://raw.githubusercontent.com/10mohi6/hugo-theme-simple-blog/master/images/screenshot.png)
 
 ## Live editing demo
 
 ![Live editing demo](/public/assets/simple-blog-with-tina.mp4)
+
+
+https://github.com/user-attachments/assets/5437ab20-9a4f-47f7-8bd1-bc70a217f237
 
 ## Credits
 
@@ -44,10 +46,6 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm run build`   | Build your production site to `./dist/`      |
 | `pnpm run preview` | Preview your build locally, before deploying |
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://github.com/withastro/astro) or jump into our [Discord server](https://astro.build/chat).
-
 ## Site Configuration
 
 ```json
@@ -67,7 +65,6 @@ Feel free to check [our documentation](https://github.com/withastro/astro) or ju
   ],
   "settings": {
     "pagination": 6,
-    "blog_folder": "posts"
   }
 }
 ```

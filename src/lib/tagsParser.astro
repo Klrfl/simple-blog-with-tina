@@ -1,16 +1,19 @@
 ---
+import type { CollectionKey } from "astro:content";
 import { getContent } from "./contentParser.astro";
 
-export const getTags = async (collection: string) => {
-  const allPosts = await getContent(collection);
+export const getTags = async (collection: CollectionKey) => {
+	const allPosts = await getContent(collection);
 
-  let tags: any[] = [];
-  allPosts.map((post: any) => {
-    post.data.tags &&
-      post.data.tags.map((tag: any) => tags.push(tag.toLowerCase()));
-  });
+  const tags = allPosts.map((post) => {
+    const {tags} = post.data;
+    if (!tags) return;
 
-  const allTags = [...new Set(tags)];
-  return allTags;
+		return tags.map((tag: string) => tag.toLowerCase());
+  })
+  .filter(tag => tag !== undefined)
+  .flat();
+
+	return [...new Set(tags)];
 };
 ---

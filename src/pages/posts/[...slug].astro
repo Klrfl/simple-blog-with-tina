@@ -5,33 +5,32 @@ import PostLayout from "@layouts/PostLayout.tsx";
 import client from "tina/__generated__/client";
 
 export async function getStaticPaths() {
-  const postsResponse = await client.queries.postConnection()
-  const postsFromTina = postsResponse.data.postConnection.edges!.map(post => {
-    return {
-      params: {
-        relativePath: post!.node!._sys.relativePath
-      }
-    }
-  })
+	const postsResponse = await client.queries.postConnection();
+	const postsFromTina = postsResponse.data.postConnection.edges!.map((post) => {
+		return {
+			params: {
+				relativePath: post!.node!._sys.relativePath,
+			},
+		};
+	});
 
-  const postsPages = await Promise.all(
-    postsFromTina.map(async ({params}) => {
-      return await client.queries.post({relativePath: params.relativePath})
-    })
-  )
+	const postsPages = await Promise.all(
+		postsFromTina.map(async ({ params }) => {
+			return await client.queries.post({ relativePath: params.relativePath });
+		})
+	);
 
-  return postsPages.map((post) => {
-    return {
-      params: {slug:post.data.post._sys.filename},
-      props: { tinaProps: { ...post } }
-    }
-  })
+	return postsPages.map((post) => {
+		return {
+			params: { slug: post.data.post._sys.filename },
+			props: { tinaProps: { ...post } },
+		};
+	});
 }
 
-const {tinaProps} = Astro.props;
+const { tinaProps } = Astro.props;
 ---
 
-
 <Layout title={tinaProps.data.post.title}>
-  <PostLayout client:tina tinaProps={tinaProps} />
+	<PostLayout client:tina tinaProps={tinaProps} />
 </Layout>
