@@ -2,14 +2,14 @@
 import type { Page } from "astro";
 import Card from "./Card.astro";
 import Pagination from "./Pagination.astro";
+import type { ContentCollectionKey, CollectionEntry } from "astro:content";
 
 export interface Props {
-  title: string;
-  page: Page<unknown>;
-  url?: string;
+	title: string;
+	page: Page<CollectionEntry<ContentCollectionKey>>;
 }
 
-const { title, page, url } = Astro.props;
+const { title, page } = Astro.props;
 ---
 
 <div class="container">
@@ -20,10 +20,10 @@ const { title, page, url } = Astro.props;
 	</div>
 </div>
 <div class="bg-skew bg-skew-light">
-  <div class="container py-4">
-    <div class="row" transition:name="list" transition:animate="slide">
-      {page?.data.map((post) => <Card post={post} url={url} />)}
-    </div>
-    <Pagination pagination={page} />
-  </div>
+	<div class="container py-4">
+		<div class="row" transition:name="list" transition:animate="slide">
+			{page?.data.map((post) => <Card post={post} />)}
+		</div>
+		<Pagination pagination={page} />
+	</div>
 </div>

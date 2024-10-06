@@ -5,10 +5,10 @@ import type { CollectionEntry } from "astro:content";
 
 export interface Props {
 	post: CollectionEntry<CollectionKey>;
-	url?: string;
 }
 
-const { post, url } = Astro.props;
+const { post } = Astro.props;
+const url = "/posts/";
 ---
 
 <div class="col-lg-6">

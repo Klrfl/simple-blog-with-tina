@@ -5,7 +5,11 @@ import PostLayout from "@layouts/PostLayout.tsx";
 import client from "tina/__generated__/client";
 
 export async function getStaticPaths() {
+	/** fetch all available posts (because we're in static more), then generate
+	 * get the relativePath of each post
+	 */
 	const postsResponse = await client.queries.postConnection();
+
 	const postsFromTina = postsResponse.data.postConnection.edges!.map((post) => {
 		return {
 			params: {
@@ -14,6 +18,9 @@ export async function getStaticPaths() {
 		};
 	});
 
+	/** after that we use client.queries.<collection name> to get the data
+	 *needed by useTina()
+	 */
 	const postsPages = await Promise.all(
 		postsFromTina.map(async ({ params }) => {
 			return await client.queries.post({ relativePath: params.relativePath });
