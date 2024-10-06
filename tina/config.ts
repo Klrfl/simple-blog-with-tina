@@ -110,6 +110,10 @@ export default defineConfig({
         label: "Global config",
         ui: {
           global: true,
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
         },
         defaultItem: () => ({
           language: "en",
