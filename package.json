@@ -11,19 +11,19 @@
     "format": "prettier --write src/"
   },
   "devDependencies": {
-    "@tinacms/cli": "^1.5.53",
-    "@types/node": "^22.2.0",
-    "astro": "^4.13.3",
+    "@tinacms/cli": "^1.6.11",
+    "@types/node": "^22.9.1",
+    "astro": "^4.16.13",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1"
   },
   "dependencies": {
     "@astrojs/react": "^3.6.2",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
     "astro-tina": "^0.1.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "tinacms": "^2.1.1"
+    "tinacms": "^2.4.0"
   }
 }
