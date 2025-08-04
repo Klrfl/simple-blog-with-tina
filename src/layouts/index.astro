@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import config from "@config/config.json";
 import BaseHead from "@components/partials/header.astro";
 import BaseFooter from "@components/partials/footer.astro";
@@ -23,7 +23,7 @@ const { lang, title } = Astro.props;
 			integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
 			crossorigin="anonymous"
 		/>
-		<ViewTransitions />
+		<ClientRouter />
 	</head>
 
 	<body>
